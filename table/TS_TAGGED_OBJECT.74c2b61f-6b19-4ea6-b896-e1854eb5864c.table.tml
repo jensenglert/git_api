@@ -1,0 +1,35 @@
+guid: 74c2b61f-6b19-4ea6-b896-e1854eb5864c
+table:
+  name: TS_TAGGED_OBJECT
+  db: CS_TOOLS
+  schema: ANALYTICS
+  db_table: TS_TAGGED_OBJECT
+  connection:
+    name: snowflake
+    fqn: 985c9383-c472-4c28-b11a-ea0b7f03d8ed
+  columns:
+  - name: OBJECT_GUID
+    db_column_name: OBJECT_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: TAG_GUID
+    db_column_name: TAG_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: TS_TAGGED_OBJECT_to_TS_METADATA_OBJECT
+    destination:
+      name: TS_METADATA_OBJECT
+      fqn: be9f31f0-b210-44c3-ae78-658c6e2ff8d1
+    "on": "[TS_TAGGED_OBJECT::OBJECT_GUID] = [TS_METADATA_OBJECT::OBJECT_GUID]"
+    type: INNER
+  - name: TS_TAGGED_OBJECT_to_TS_TAG
+    destination:
+      name: TS_TAG
+      fqn: 75002858-92e9-489a-b830-17e6d8fdbc81
+    "on": "[TS_TAGGED_OBJECT::TAG_GUID] = [TS_TAG::TAG_GUID]"
+    type: INNER
