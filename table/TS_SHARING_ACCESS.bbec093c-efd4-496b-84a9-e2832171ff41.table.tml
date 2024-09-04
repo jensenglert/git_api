@@ -1,0 +1,66 @@
+guid: bbec093c-efd4-496b-84a9-e2832171ff41
+table:
+  name: TS_SHARING_ACCESS
+  db: CS_TOOLS
+  schema: ANALYTICS
+  db_table: TS_SHARING_ACCESS
+  connection:
+    name: snowflake
+    fqn: 985c9383-c472-4c28-b11a-ea0b7f03d8ed
+  columns:
+  - name: SK_DUMMY
+    description: "shared_to_* is a composite PK, but can be nullable, so we need a dummy"
+    db_column_name: SK_DUMMY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: OBJECT_GUID
+    db_column_name: OBJECT_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SHARED_TO_USER_GUID
+    db_column_name: SHARED_TO_USER_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SHARED_TO_GROUP_GUID
+    db_column_name: SHARED_TO_GROUP_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: PERMISSION_TYPE
+    db_column_name: PERMISSION_TYPE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SHARE_MODE
+    db_column_name: SHARE_MODE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: TS_METADATA_OBJECT_to_TS_SHARING_ACCESS
+    destination:
+      name: TS_METADATA_OBJECT
+      fqn: be9f31f0-b210-44c3-ae78-658c6e2ff8d1
+    "on": "[TS_SHARING_ACCESS::OBJECT_GUID] = [TS_METADATA_OBJECT::OBJECT_GUID]"
+    type: INNER
+  - name: TS_SHARING_ACCESS_to_TS_GROUP
+    destination:
+      name: TS_GROUP
+      fqn: d6315503-05b1-4c3f-9de4-fd77f9cbeb59
+    "on": "[TS_SHARING_ACCESS::SHARED_TO_GROUP_GUID] = [TS_GROUP::GROUP_GUID]"
+    type: INNER
+  - name: TS_SHARING_ACCESS_to_TS_USER
+    destination:
+      name: TS_USER
+      fqn: b1512683-0c2c-415f-8637-4c999b5df88e
+    "on": "[TS_SHARING_ACCESS::SHARED_TO_USER_GUID] = [TS_USER::USER_GUID]"
+    type: INNER

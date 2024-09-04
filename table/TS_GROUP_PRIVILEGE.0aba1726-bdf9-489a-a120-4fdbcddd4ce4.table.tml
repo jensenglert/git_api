@@ -1,0 +1,29 @@
+guid: 0aba1726-bdf9-489a-a120-4fdbcddd4ce4
+table:
+  name: TS_GROUP_PRIVILEGE
+  db: CS_TOOLS
+  schema: ANALYTICS
+  db_table: TS_GROUP_PRIVILEGE
+  connection:
+    name: snowflake
+    fqn: 985c9383-c472-4c28-b11a-ea0b7f03d8ed
+  columns:
+  - name: GROUP_GUID
+    db_column_name: GROUP_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: PRIVILEGE
+    db_column_name: PRIVILEGE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: TS_GROUP_PRIVILEGE_to_TS_GROUP
+    destination:
+      name: TS_GROUP
+      fqn: d6315503-05b1-4c3f-9de4-fd77f9cbeb59
+    "on": "[TS_GROUP_PRIVILEGE::GROUP_GUID] = [TS_GROUP::GROUP_GUID]"
+    type: INNER

@@ -1,0 +1,29 @@
+guid: 61fbe7a9-37e2-45d3-bfa7-acd942e26c21
+table:
+  name: TS_COLUMN_SYNONYM
+  db: CS_TOOLS
+  schema: ANALYTICS
+  db_table: TS_COLUMN_SYNONYM
+  connection:
+    name: snowflake
+    fqn: 985c9383-c472-4c28-b11a-ea0b7f03d8ed
+  columns:
+  - name: COLUMN_GUID
+    db_column_name: COLUMN_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SYNONYM
+    db_column_name: SYNONYM
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  joins_with:
+  - name: TS_METADATA_COLUMN_to_TS_COLUMN_SYNONYM
+    destination:
+      name: TS_METADATA_COLUMN
+      fqn: 448be80e-6878-4d94-a5de-93deba34897f
+    "on": "[TS_COLUMN_SYNONYM::COLUMN_GUID] = [TS_METADATA_COLUMN::COLUMN_GUID]"
+    type: INNER
