@@ -1,0 +1,48 @@
+guid: 75002858-92e9-489a-b830-17e6d8fdbc81
+table:
+  name: TS_TAG
+  db: CS_TOOLS
+  schema: ANALYTICS
+  db_table: TS_TAG
+  connection:
+    name: snowflake
+    fqn: 985c9383-c472-4c28-b11a-ea0b7f03d8ed
+  columns:
+  - name: TAG_GUID
+    db_column_name: TAG_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: TAG_NAME
+    db_column_name: TAG_NAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: AUTHOR_GUID
+    db_column_name: AUTHOR_GUID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: CREATED
+    db_column_name: CREATED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE_TIME
+  - name: MODIFIED
+    db_column_name: MODIFIED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE_TIME
+  - name: COLOR
+    db_column_name: COLOR
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
