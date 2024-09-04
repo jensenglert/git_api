@@ -1,5 +1,15 @@
 [ {
+  "originalGuid" : "448be80e-6878-4d94-a5de-93deba34897f",
+  "mappedGuid" : "1d475203-385f-40b7-9ba1-7e13f823bb7b",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
   "originalGuid" : "b1512683-0c2c-415f-8637-4c999b5df88e",
+  "mappedGuid" : "c8aa1c04-b402-415b-ba07-d2f65ff71d12",
+  "counter" : 0,
+  "additionalMapping" : { }
+}, {
+  "originalGuid" : "c8aa1c04-b402-415b-ba07-d2f65ff71d12",
   "mappedGuid" : "c8aa1c04-b402-415b-ba07-d2f65ff71d12",
   "counter" : 0,
   "additionalMapping" : { }
