@@ -1,0 +1,40 @@
+guid: 72f18100-ad55-40c6-b8b3-59153c8862a8
+liveboard:
+  name: Second Liveboard
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Total Count Shared To User Guid by Name
+      tables:
+      - id: CS Tools
+        name: CS Tools
+        fqn: f717a7f1-388f-45ed-85ce-26a7213de1d3
+      search_query: "[Name] count [Shared To User Guid]"
+      answer_columns:
+      - name: Name
+      - name: Number of Shared To User Guid
+      table:
+        table_columns:
+        - column_id: Name
+          show_headline: false
+        - column_id: Number of Shared To User Guid
+          show_headline: false
+        ordered_column_ids:
+        - Name
+        - Number of Shared To User Guid
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Name
+        - column_id: Number of Shared To User Guid
+        axis_configs:
+        - x:
+          - Name
+          "y":
+          - Number of Shared To User Guid
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Name\",\"columnProperty\": {}},{\"columnId\": \"Number of Shared To User Guid\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"bfcfd75b-58c5-4a68-b182-31805c1082dc\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Number of Shared To User Guid\"],\"isOpposite\": false}},{\"id\": \"9085ab9a-44eb-42fd-b53b-9a4ed5c1bcd2\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Name\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Number of Shared To User Guid\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: c66fa9a1-1a49-4299-a23e-a356972998be
